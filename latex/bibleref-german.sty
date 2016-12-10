@@ -1,12 +1,168 @@
-%%% (C) Dominik Waßenhoven 2011
+%%% (C) Dominik WaÃŸenhoven 2011
+
+% Ã„nderungen der Version 1.1 von 2016:
+%	- Umstellen auf utf8 und inputenc
+%	- SortierschlÃ¼ssel zur Registererstellung (NICHT fÃ¼r Terminus und Zahlwort!)
+
+
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{bibleref-german}[2011/04/02 v1.0a German translation of bibleref]
+\ProvidesPackage{bibleref-german}[2016/09/01 v1.1 German translation of bibleref]
 \RequirePackage{bibleref}
 \RequirePackage{etoolbox}
 
-%%% Schalter für Stile (zur Unterscheidung der Namen) %%%
+\RequirePackage[utf8]{inputenc}
+
+
+% SortierschlÃ¼ssel fÃ¼r die Registererstellung:
+
+\biblerefmap{Gen}{01}   % cave: muss identisch der AuflÃ¶sung sein!
+\biblerefmap{Gn}{01}
+\biblerefmap{Genesis}{01}   % cave: muss identisch der AuflÃ¶sung sein!
+\biblerefmap{Mose1}{01}
+
+\biblerefmap{Ex}{02}
+\biblerefmap{Exodus}{02}   % cave: muss identisch der AuflÃ¶sung sein!
+\biblerefmap{Mose2}{02}
+
+\biblerefmap{Lev}{03}
+\biblerefmap{Lv}{03}
+\biblerefmap{Levitikus}{03}   % cave: muss identisch der AuflÃ¶sung sein!
+\biblerefmap{Leviticus}{03}
+\biblerefmap{Mose3}{03}
+
+\biblerefmap{Num}{04}
+\biblerefmap{Nm}{04}
+\biblerefmap{Numeri}{04}
+\biblerefmap{Mose4}{04}
+
+\biblerefmap{Dtn}{05}
+\biblerefmap{Dt}{05}
+\biblerefmap{Deuteronomium}{05}
+\biblerefmap{Mose5}{05}
+
+\biblerefmap{Jos}{06}
+\biblerefmap{Josua}{06}
+
+\biblerefmap{Richter}{07}
+\biblerefmap{Ri}{07}
+\biblerefmap{Iudicum}{07}
+\biblerefmap{Idc}{07}
+
+\biblerefmap{Rut}{08}
+\biblerefmap{Ruth}{08}
+\biblerefmap{Rt}{08}
+
+\biblerefmap{Sam1}{09}
+\biblerefmap{Samuel1}{09}
+\biblerefmap{Samuhelis1}{09}
+\biblerefmap{Sm1}{09}
+
+\biblerefmap{Sam2}{10}
+\biblerefmap{Samuel2}{10}
+\biblerefmap{Samuhelis1}{10}
+\biblerefmap{Sm2}{10}
+
+\biblerefmap{KÃ¶n1}{11}
+\biblerefmap{KÃ¶nige1}{11}
+\biblerefmap{Regum3}{11} % sic.
+
+\biblerefmap{KÃ¶n2}{12}
+\biblerefmap{KÃ¶nige2}{12}
+\biblerefmap{Regum4}{12}
+
+\biblerefmap{Chr1}{13}
+\biblerefmap{1Chronik}{13}
+\biblerefmap{Chronik1}{13}
+\biblerefmap{Paralipomenon1}{13}
+
+\biblerefmap{Chr2}{14}
+\biblerefmap{2Chronik}{14}
+\biblerefmap{Chronik2}{14}
+\biblerefmap{Paralipomenon2}{14}
+
+\biblerefmap{Esra}{15}
+\biblerefmap{Esr}{15}
+\biblerefmap{Ezra1}{15}
+\biblerefmap{Esr1}{15}
+
+\biblerefmap{Nehemia}{16}
+\biblerefmap{Neh}{16}
+\biblerefmap{Ezra2}{16}   % sicher ???
+\biblerefmap{Esr2}{16}
+
+\biblerefmap{Tobit}{17}
+\biblerefmap{Tob}{17}
+
+\biblerefmap{Judit}{18}
+\biblerefmap{Jdt}{18}
+\biblerefmap{Iudith}{18}
+\biblerefmap{Idt}{18}
+
+\biblerefmap{Ester}{19}
+\biblerefmap{Est}{19}
+
+\biblerefmap{Makk1}{20}
+\biblerefmap{1Makkabaeer}{20}
+\biblerefmap{MakkabÃ¤er1}{20}
+\biblerefmap{Macchabeorum1}{20}
+\biblerefmap{Mcc1}{20}
+
+\biblerefmap{Makk2}{21}
+\biblerefmap{2Makkabaeer}{21}
+\biblerefmap{MakkabÃ¤er2}{21}
+\biblerefmap{Macchabeorum2}{21}
+\biblerefmap{Mcc2}{21}
+
+\biblerefmap{Ijob}{22}
+\biblerefmap{Hiob}{22}
+\biblerefmap{Iob}{22}
+
+\biblerefmap{Psalmen}{23}
+\biblerefmap{Psalm}{23}
+\biblerefmap{Psalmi}{23}
+\biblerefmap{Ps}{23}
+
+\biblerefmap{SprichwÃ¶rter}{24}
+\biblerefmap{Spr}{24}
+\biblerefmap{SprÃ¼che}{24}
+\biblerefmap{Proverbia}{24}
+\biblerefmap{Prv}{24}
+
+\biblerefmap{Kohelet}{25}
+\biblerefmap{Koh}{25}
+\biblerefmap{Prediger}{25}
+\biblerefmap{Pred}{25}
+
+% ...
+\biblerefmap{Mt}{80}
+\biblerefmap{MatthÃ¤us}{80}
+\biblerefmap{Mattheus}{80}
+
+\biblerefmap{Mk}{81}
+\biblerefmap{Mc}{81}
+\biblerefmap{Markus}{81}
+\biblerefmap{Marcus}{81}
+
+\biblerefmap{Lk}{82}
+\biblerefmap{Lc}{82}
+\biblerefmap{Lukas}{82}
+
+\biblerefmap{Joh}{83}
+\biblerefmap{Io}{83}
+\biblerefmap{Johannes}{83}
+\biblerefmap{Iohannes}{83}
+
+\biblerefmap{Apoc}{99}
+\biblerefmap{Apc}{99}
+\biblerefmap{Apocalypsis}{99}
+\biblerefmap{Offenbarung}{99}
+\biblerefmap{Offb}{99}
+
+
+
+%%% Schalter fÃ¼r Stile (zur Unterscheidung der Namen) %%%
 \newtoggle{brg@einh}
-\toggletrue{brg@einh}% Einheitsübersetzung ist standard
+\toggletrue{brg@einh}% EinheitsÃ¼bersetzung ist standard
 \newtoggle{brg@luther}
 \newtoggle{brg@LThK}
 \newtoggle{brg@RGG}
@@ -22,7 +178,7 @@
 \newtoggle{brg@MLA}
 \newtoggle{brg@chicago}
 
-%%% Hilfsbefehle zur Unterscheidung der Bücher
+%%% Hilfsbefehle zur Unterscheidung der BÃ¼cher
 \newcommand{\brg@currentstyle}{}
 \newcommand{\brg@setcurrentstyle}[1]{%
   \renewcommand{\brg@currentstyle}{brg@#1}%
@@ -45,7 +201,7 @@
   \togglefalse{brg@chicago}%
   \toggletrue{\brg@currentstyle}}
 
-%%% Hilfsbefehle für deutsche Namen der Bücher
+%%% Hilfsbefehle fÃ¼r deutsche Namen der BÃ¼cher
 \newcommand{\brg@fullname}{}
 \newcommand{\brg@abbrvname}{}
 \newcommand*{\brg@providecs}[2]{%
@@ -54,22 +210,22 @@
   }{}%
 }
 
-%%% Schalter zum Unterscheiden von lang/abgekürzt %%%
+%%% Schalter zum Unterscheiden von lang/abgekÃ¼rzt %%%
 \newtoggle{brg@kurz}
 \newtoggle{brg@lang}
 \newtoggle{brg@terminus}
 \newtoggle{brg@zahlwort}
 
-%%% Einige zusätzliche Hilfsmakros %%% 
+%%% Einige zusÃ¤tzliche Hilfsmakros %%% 
 \newcommand*{\BRbook}{}% Buch 
-\newcommand*{\BRbooksuffix}{buch}% Buch (angehängt)
+\newcommand*{\BRbooksuffix}{buch}% Buch (angehÃ¤ngt)
 \newcommand*{\BRprophet}{}% Prophet 
-\newcommand*{\BRepistle}{brief}% brief (angehängt)
+\newcommand*{\BRepistle}{brief}% brief (angehÃ¤ngt)
 \newcommand*{\BRPaulustothe}{}% 'Brief des Paulus an die'
 \newcommand*{\BRPaulusto}{}% 'Brief des Paulus an'
-\newcommand*{\BRdas}{}% z.B. für 'Das Buch'
-\newcommand*{\BRder}{}% z.B. für 'Der Brief'
-\newcommand*{\BRdie}{}% z.B. für 'Die Apostelgeschichte'
+\newcommand*{\BRdas}{}% z.B. fÃ¼r 'Das Buch'
+\newcommand*{\BRder}{}% z.B. fÃ¼r 'Der Brief'
+\newcommand*{\BRdie}{}% z.B. fÃ¼r 'Die Apostelgeschichte'
 \newcommand*{\BRHoheslied}{Hoheslied}% Hoheslied / Das Hohelied 
 \newcommand*{\BROffbJoh}{}% Offenbarung 'des Johannes'
 \newcommand*{\BRApgLuk}{}% Apostelgeschichte 'des Lukas'
@@ -84,7 +240,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%
-%%% Neue Bücher %%%
+%%% Neue BÃ¼cher %%%
 %%%%%%%%%%%%%%%%%%% 
 \def\br@Psalm{}%
 \def\br@Deuterojesaja{}%
@@ -129,12 +285,12 @@
   \def\br@Psalm{Ps\BRperiod}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-%%% Namen der Bücher %%% 
+%%% Namen der BÃ¼cher %%% 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand*{\brg@fullname}{%
   \iftoggle{brg@einh}%
     {% nach den Loccumer Richtlinien
-    %% (wie in der Einheitsübersetzung) 
+    %% (wie in der EinheitsÃ¼bersetzung) 
     \def\br@Genesis{\BRdas\BRbook Genesis}% 
   	\def\br@Exodus{\BRdas\BRbook Exodus}% 
   	\def\br@Leviticus{\BRdas\BRbook Levitikus}% 
@@ -680,11 +836,11 @@
 	\def\br@Revelation{Apocalypsis Iohannis apostoli}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-%%% Abgekürzte Namen %%%
+%%% AbgekÃ¼rzte Namen %%%
 %%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand*{\brg@abbrvname}{%
   \iftoggle{brg@einh}
-    {% Einheitsübersetzung
+    {% EinheitsÃ¼bersetzung
   	\def\br@Genesis{Gen\BRperiod}% 
   	\def\br@Exodus{Ex\BRperiod}% 
   	\def\br@Leviticus{Lev\BRperiod}% 
@@ -1221,7 +1377,7 @@
 \brg@providecs{br@Galater}{\br@Galatians}%
 \brg@providecs{br@Epheser}{\br@Ephesians}%
 \brg@providecs{br@Philipper}{\br@Philippians}%
-\brg@providecs{br@Kolosser}{\br@Colossians}%
+\brg@providecs{br@Kolosser}{\br@Colossians}%Â´
 \brg@providecs{br@IThessalonicher}{\br@IThessalonians}%
 \brg@providecs{br@IIThessalonicher}{\br@IIThessalonians}%
 \brg@providecs{br@1Thessalonicher}{\br@IThessalonians}%
@@ -1245,7 +1401,7 @@
 \brg@providecs{br@Judas}{\br@Jude}%
 \brg@providecs{br@Offenbarung}{\br@Revelation}%
 
-% Deutsche Synonyme (abgekürzt)
+% Deutsche Synonyme (abgekÃ¼rzt)
 \brg@providecs{br@IMos}{\br@Genesis}%
 \brg@providecs{br@IIMos}{\br@Exodus}%
 \brg@providecs{br@IIIMos}{\br@Leviticus}%
@@ -1314,7 +1470,7 @@
 %%%%%%%%%%%%%
 %%% Stile %%%
 %%%%%%%%%%%%%
-\newcommand*{\brs@Einheitsuebersetzung}{% Einheitsübersetzung
+\newcommand*{\brs@Einheitsuebersetzung}{% EinheitsÃ¼bersetzung
   \brg@setcurrentstyle{einh}%
   \iftoggle{brg@terminus}
    {\brg@Terminus%
@@ -1336,7 +1492,7 @@
   \renewcommand*{\BRchsep}{; }% zwischen zwei Kapiteln
   \renewcommand*{\BRvrsep}{--}% 
   \renewcommand*{\BRvsep}{.}% zwischen Versen
-  \renewcommand*{\BRperiod}{}% nach Buchabkürzung
+  \renewcommand*{\BRperiod}{}% nach BuchabkÃ¼rzung
   \brg@Zahlwort%
 }
 
@@ -1355,7 +1511,7 @@
     \renewcommand*{\BRbooknumberstyle}[1]{##1.}%
     \renewcommand*{\BRepistlenumberstyle}[1]{##1.}}%
      {\brg@fullname}}%
-  \renewcommand*{\BRepistle}{}% brief (angehängt)
+  \renewcommand*{\BRepistle}{}% brief (angehÃ¤ngt)
   \renewcommand*{\BRbooktitlestyle}[1]{##1}%
   \renewcommand*{\BRchapterstyle}[1]{##1}%
   \renewcommand*{\BRversestyle}[1]{##1}%
@@ -1364,11 +1520,11 @@
   \renewcommand*{\BRchsep}{; }% zwischen zwei Kapiteln
   \renewcommand*{\BRvrsep}{--}% 
   \renewcommand*{\BRvsep}{.}% zwischen Versen
-  \renewcommand*{\BRperiod}{}% nach Buchabkürzung
+  \renewcommand*{\BRperiod}{}% nach BuchabkÃ¼rzung
   \brg@Zahlwort%
 }
 
-\newcommand*{\brs@LThK}{% 'Lexikon für Theologie und Kirche'
+\newcommand*{\brs@LThK}{% 'Lexikon fÃ¼r Theologie und Kirche'
   \brg@setcurrentstyle{LThK}%
   \iftoggle{brg@terminus}
    {\brg@Terminus%
@@ -1392,7 +1548,7 @@
   \renewcommand*{\BRchsep}{; }% zwischen zwei Kapiteln
   \renewcommand*{\BRvrsep}{--}% 
   \renewcommand*{\BRvsep}{.}% zwischen Versen
-  \renewcommand*{\BRperiod}{}% nach Buchabkürzung
+  \renewcommand*{\BRperiod}{}% nach BuchabkÃ¼rzung
   \brg@Zahlwort%
 }
 
@@ -1413,13 +1569,13 @@
   \renewcommand*{\BRbooktitlestyle}[1]{##1}%
   \renewcommand*{\BRchapterstyle}[1]{##1}%
   \renewcommand*{\BRversestyle}[1]{##1}%
-  \renewcommand*{\BRepistle}{brief}% brief (angehängt)
+  \renewcommand*{\BRepistle}{brief}% brief (angehÃ¤ngt)
   \renewcommand*{\BRbkchsep}{\,}% zwischen Buch und Kapitel
   \renewcommand*{\BRchvsep}{,}% zwischen Kapitel und Vers
   \renewcommand*{\BRchsep}{; }% zwischen zwei Kapiteln
   \renewcommand*{\BRvrsep}{--}% 
   \renewcommand*{\BRvsep}{.}% zwischen Versen
-  \renewcommand*{\BRperiod}{}% nach Buchabkürzung
+  \renewcommand*{\BRperiod}{}% nach BuchabkÃ¼rzung
   \brg@Zahlwort%
   \iftoggle{brg@zahlwort}
    {\renewcommand{\BRbooknumberstyle}[1]{%
@@ -1429,7 +1585,7 @@
    {}%
 }
 
-\newcommand*{\brs@TRE}{% 'Theologische Realenzyklopädie'
+\newcommand*{\brs@TRE}{% 'Theologische RealenzyklopÃ¤die'
   \brg@setcurrentstyle{TRE}%
   \renewcommand*{\BRbooknumberstyle}[1]{##1.~}%
   \renewcommand*{\BRepistlenumberstyle}[1]{##1.~}%
@@ -1449,7 +1605,7 @@
   \renewcommand*{\BRchsep}{; }% zwischen zwei Kapiteln
   \renewcommand*{\BRvrsep}{--}% 
   \renewcommand*{\BRvsep}{.}% zwischen Versen
-  \renewcommand*{\BRperiod}{}% nach Buchabkürzung
+  \renewcommand*{\BRperiod}{}% nach BuchabkÃ¼rzung
   \brg@Zahlwort%
   \renewcommand*{\BRbookof}{}% Buch der
   \renewcommand*{\BRprophet}{}% Prophet
@@ -1457,15 +1613,15 @@
     \iftoggle{brg@terminus}
       {evangelium}
       {}}% 
-  \renewcommand*{\BRepistle}{brief}% brief (angehängt)
+  \renewcommand*{\BRepistle}{brief}% brief (angehÃ¤ngt)
   \renewcommand*{\BRepistletothe}{}%
   \renewcommand*{\BRepistleto}{}%
   \renewcommand*{\BRPaulustothe}{}%
   \renewcommand*{\BRPaulusto}{}%
   \renewcommand*{\BRepistleof}{}%
-  \renewcommand*{\BRdas}{}% z.B. für 'Das Buch'
-  \renewcommand*{\BRder}{}% z.B. für 'Der Brief'
-  \renewcommand*{\BRdie}{}% z.B. für 'Die Apostelgeschichte'
+  \renewcommand*{\BRdas}{}% z.B. fÃ¼r 'Das Buch'
+  \renewcommand*{\BRder}{}% z.B. fÃ¼r 'Der Brief'
+  \renewcommand*{\BRdie}{}% z.B. fÃ¼r 'Die Apostelgeschichte'
   \iftoggle{brg@zahlwort}
    {\renewcommand{\BRbooknumberstyle}[1]{%
       \protect\Ordinalstringnum{##1}[n]\ }%
@@ -1491,7 +1647,7 @@
   \renewcommand{\BRchsep}{; }% zwischen zwei Kapiteln
   \renewcommand{\BRvrsep}{--}% 
   \renewcommand{\BRvsep}{.}% zwischen Versen
-  \renewcommand{\BRperiod}{}% nach Buchabkürzung
+  \renewcommand{\BRperiod}{}% nach BuchabkÃ¼rzung
   \iftoggle{brg@zahlwort}
    {\renewcommand*{\BRprimus}{ primus}% I
     \renewcommand*{\BRsecundus}{ secundus}% II
@@ -1503,22 +1659,22 @@
     \renewcommand*{\BRquartus}{~IV}}% IV
 }
 
-%%% Hilfsbefehl für Terminus 
+%%% Hilfsbefehl fÃ¼r Terminus 
 %%% (Standardeinstellungen; Abweichungen in den Stilbefehlen)
 \newcommand{\brg@Terminus}{%
   \renewcommand*{\BRbook}{Buch }% Buch 
   \renewcommand*{\BRbookof}{Buch der }% Buch der
   \renewcommand*{\BRprophet}{Buch }% Prophet
   \renewcommand*{\BRgospel}{Das Evangelium nach }% 
-  \renewcommand*{\BRepistle}{}% brief (angehängt)
+  \renewcommand*{\BRepistle}{}% brief (angehÃ¤ngt)
   \renewcommand*{\BRepistletothe}{Brief an die }%
   \renewcommand*{\BRepistleto}{Brief an }%
   \renewcommand*{\BRPaulustothe}{Brief an die }%
   \renewcommand*{\BRPaulusto}{Brief an }%
   \renewcommand*{\BRepistleof}{Brief des }%
-  \renewcommand*{\BRdas}{Das }% z.B. für 'Das Buch'
-  \renewcommand*{\BRder}{Der }% z.B. für 'Der Brief'
-  \renewcommand*{\BRdie}{Die }% z.B. für 'Die Apostelgeschichte'
+  \renewcommand*{\BRdas}{Das }% z.B. fÃ¼r 'Das Buch'
+  \renewcommand*{\BRder}{Der }% z.B. fÃ¼r 'Der Brief'
+  \renewcommand*{\BRdie}{Die }% z.B. fÃ¼r 'Die Apostelgeschichte'
   \renewcommand*{\BROffbJoh}{ des Johannes}% Offenbarung 'des Johannes'
   \renewcommand*{\BRApgLuk}{ des Lukas}% Apostelgeschichte 'des Lukas'
   \renewcommand*{\BRHoheslied}{Das Hohelied}% 'Hoheslied' / 'Das Hohelied'
@@ -1528,7 +1684,7 @@
   \renewcommand*{\BRSalomos}{ Salomos}%
 }
    
-%%% Hilfsbefehl für Zahlwort
+%%% Hilfsbefehl fÃ¼r Zahlwort
 %%% (Standardeinstellungen; Abweichungen in den Stilbefehlen)
 \newcommand*{\brg@Zahlwort}{%
   \iftoggle{brg@zahlwort}
@@ -1548,7 +1704,7 @@
     \renewcommand*{\BRversesuffixstyle}[1]{##1}}
    {}}
 
-%%% Neues Laden des Stils (Hilfsbefehl für Optionen kurz/lang etc.)
+%%% Neues Laden des Stils (Hilfsbefehl fÃ¼r Optionen kurz/lang etc.)
 \newcommand*{\brg@loadcurrentstyle}{%
   \iftoggle{brg@einh}
   {\brs@Einheitsuebersetzung}
@@ -1607,13 +1763,13 @@
   \togglefalse{brg@kurz}%
   \brg@loadcurrentstyle}
   
-%%% Optionen zum Überschreiben der Stil-Standards
+%%% Optionen zum Ãœberschreiben der Stil-Standards
 \DeclareOption{lang}{\brf@lang}
 \DeclareOption{Terminus}{\brf@Terminus}
 \DeclareOption{kurz}{\brf@kurz}
 \DeclareOption{Zahlwort}{\brf@Zahlwort}
 
-%%% Optionen für die Stile %%%
+%%% Optionen fÃ¼r die Stile %%%
 \DeclareOption{Einheitsuebersetzung}{\brs@Einheitsuebersetzung}
 \DeclareOption{Lutherbibel}{\brs@Lutherbibel}
 \DeclareOption{LThK}{\brs@LThK}
@@ -1621,7 +1777,7 @@
 \DeclareOption{TRE}{\brs@TRE}
 \DeclareOption{Vulgata}{\brs@Vulgata}
 
-%%% Optionen für originale bibleref-Stile %%%
+%%% Optionen fÃ¼r originale bibleref-Stile %%%
 \DeclareOption{default}{\brs@default%
   \brg@setcurrentstyle{default}%
   \toggletrue{brg@default}}
@@ -1650,6 +1806,8 @@
   \brg@setcurrentstyle{chicago}%
   \toggletrue{brg@chicago}}
 
+  
+  
 \ProcessOptions
 
 %%% Standard setzen %%%
@@ -1691,7 +1849,9 @@
   {\csname brf@#1\endcsname}%
 }
 
-% Bugfix für fmtcount:
+
+
+% Bugfix fÃ¼r fmtcount:
 \DeclareRobustCommand{\@OrdinalstringMgerman}[2]{%
    \@ordinalstringMgerman{#1}{\@@num@str}%
    \protected@edef#2{\protect\MakeUppercase\@@num@str}%
